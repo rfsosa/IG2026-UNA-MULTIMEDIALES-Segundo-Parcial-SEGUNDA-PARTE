@@ -1,114 +1,526 @@
-/* ===== RESET BÁSICO ===== */
+/* =========================================================
+   Casey Reas — hoja de estilos compartida
+   Paleta inspirada en su estética de código y sistemas
+   generativos: fondo oscuro tipo terminal, cian y un acento
+   dorado/verde tomado de sus imágenes de glitch y pixel-art.
+   ========================================================= */
+
+/* ---------- Reset básico ---------- */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== TIPOGRAFÍA BASE ===== */
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #222222;
-}
-
-h1, h2, h3, strong, blockquote {
-  font-family: 'Arvo', serif;
-}
-
-/* ===== FONDO Y CENTRADO GENERAL ===== */
-body {
-  display: flex;
-  justify-content: center;
-  background-image: url('../img/fondo.png');
-  background-repeat: repeat;
-  min-height: 100vh;
-}
-
-/* ===== CONTENEDOR PRINCIPAL ===== */
-.contenedor {
-  width: 90%;
-  max-width: 75rem;
+  color: #eef6ff;
+  background-color: #060a18;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.92);
-  margin: 2rem 0;
-  padding: 2rem;
-  border-radius: 0.5rem;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
 }
 
-/* ===== LAYOUT 2 COLUMNAS (obra.html) ===== */
-.columnas-2 {
+/* El patrón de fondo se muestra como una textura sutil y fija,
+   detrás de todo el contenido, para que siga siendo visible
+   (punto 16) sin afectar la legibilidad del texto. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../img/fondo.png");
+  background-repeat: repeat;
+  background-size: 12rem;
+  opacity: 0.16;
+  z-index: -1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: #29e0ff;
+}
+
+/* ---------- Contenedor centrado (flexbox) ---------- */
+.contenedor {
+  width: 100%;
+  max-width: 74rem;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ---------- Encabezado ---------- */
+.sitio-header {
+  width: 100%;
+  background-color: rgba(6, 10, 24, 0.92);
+  border-bottom: 1px solid rgba(120, 200, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.cabecera-flex {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.marca {
+  font-family: 'Arvo', serif;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Menú de navegación horizontal, igual en las tres páginas */
+.menu-principal ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: #a9bcd8;
+  font-size: 0.95rem;
+  letter-spacing: 0.03rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.menu-principal a:hover,
+.menu-principal a.activo {
+  color: #29e0ff;
+  border-bottom-color: #29e0ff;
+}
+
+/* ---------- Tipografía general ---------- */
+h1, h2, h3 {
+  font-family: 'Arvo', serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #29e0ff;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+.subtitulo {
+  color: #a9bcd8;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ---------- Intro (inicio) ---------- */
+.intro {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.cita-destacada {
+  font-family: 'Arvo', serif;
+  font-size: 1.05rem;
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid #ffb84d;
+  background-color: rgba(6, 10, 24, 0.88);
+  text-align: left;
+}
+
+.cita-destacada cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #a9bcd8;
+}
+
+
+/* ---------- Layout de 3 columnas iguales (Inicio) ---------- */
+.grid-3-columnas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.grid-3-columnas .columna {
+  flex: 1 1 0;
+  min-width: 16rem;
+  background-color: rgba(6, 10, 24, 0.88);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.foto-inline img {
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pie-foto {
+  font-size: 0.85rem;
+  color: #a9bcd8;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.enlace-boton {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  font-family: 'Arvo', serif;
+  font-size: 0.85rem;
+  color: #060a18;
+  background-color: #29e0ff;
+  padding: 0.6rem 1rem;
+  border-radius: 0.35rem;
+}
+
+/* ---------- Layout de 2 columnas de ancho diferente (Obra) ---------- */
+.grid-2-columnas {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
+  align-items: flex-start;
+}
+
+.columna-principal {
+  flex: 2 1 28rem;
+}
+
+.columna-principal section {
+  background-color: rgba(6, 10, 24, 0.88);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.columna-lateral {
+  flex: 1 1 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panel-lateral {
+  background-color: rgba(6, 10, 24, 0.88);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+
+.lista-obras {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.lista-obras li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Botones ---------- */
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  color: #eef6ff;
+  background-color: rgba(139, 92, 246, 0.25);
+  border: 1px solid #8b5cf6;
+  border-radius: 0.35rem;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  background-color: rgba(139, 92, 246, 0.45);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------- Dato curioso (Inicio) ---------- */
+.panel-interactivo {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
-.col-angosta {
-  flex: 1 1 25%;
-}
-
-.col-ancha {
-  flex: 2 1 65%;
-}
-
-/* ===== IMAGEN Y FIGURE ===== */
-figure {
-  margin-bottom: 1.5rem;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.25rem;
-}
-
-figcaption {
-  font-size: 0.875rem;
-  color: #555555;
+.panel-interactivo button {
   margin-top: 0.5rem;
-  text-align: center;
 }
 
-/* ===== LISTA "OBRAS Y CONCEPTOS CLAVE" ===== */
-.col-angosta ul {
-  list-style-position: inside;
-  padding-left: 0;
-}
-
-.col-angosta li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #dddddd;
-}
-
-/* ===== NAV HORIZONTAL ===== */
-nav ul {
+/* ---------- Galería (Obra) ---------- */
+.controles-galeria {
   display: flex;
   flex-direction: row;
-  list-style: none;
-  gap: 1.5rem;
-  padding: 1rem 0;
-  border-top: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
+  gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-nav a {
-  text-decoration: none;
-  color: #1a3c5e;
-  font-weight: bold;
-  padding: 0.25rem 0.5rem;
-  transition: color 0.2s ease;
+.galeria {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-nav a:hover {
-  color: #4aa8e0;
+.tarjeta-obra {
+  flex: 1 1 14rem;
+  max-width: 16rem;
+  background-color: rgba(6, 10, 24, 0.88);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: max-width 0.3s ease, filter 0.3s ease;
 }
 
-nav a:visited {
-  color: #1a3c5e; /* para que no se vea "gastado" en violeta al visitarlo */
+.tarjeta-obra img {
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+}
+
+.tarjeta-obra .info-obra {
+  padding: 0.9rem 1rem;
+}
+
+.tarjeta-obra h3 {
+  margin: 0 0 0.25rem;
+  color: #eef6ff;
+}
+
+.tarjeta-obra p {
+  margin: 0;
+  color: #a9bcd8;
+  font-size: 0.9rem;
+}
+
+/* ---------- Página de ejercicio ---------- */
+.instrucciones {
+  background-color: rgba(6, 10, 24, 0.88);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.paso-ejercicio {
+  background-color: rgba(6, 10, 24, 0.88);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.paso-ejercicio.oculto {
+  display: none;
+}
+
+.paso-ejercicio h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.paso-ejercicio .numero-paso {
+  font-family: 'Arvo', serif;
+  background-color: #29e0ff;
+  color: #060a18;
+  border-radius: 999px;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  max-width: 24rem;
+}
+
+.campo-formulario label {
+  font-size: 0.9rem;
+  color: #a9bcd8;
+  margin-bottom: 0.3rem;
+}
+
+.campo-formulario input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #eef6ff;
+}
+
+.campo-formulario input:disabled {
+  opacity: 0.5;
+}
+
+.mensaje-error {
+  color: #ffb84d;
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+  margin: 0 0 0.75rem;
+}
+
+.contador-carga {
+  font-size: 0.9rem;
+  color: #a9bcd8;
+  margin-bottom: 0.75rem;
+}
+
+.lista-instalaciones {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.lista-instalaciones li {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.3rem;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.panel-resultados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resultado-item {
+  background-color: rgba(41, 224, 255, 0.08);
+  border: 1px solid rgba(120, 200, 255, 0.3);
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+
+.resultado-item h3 {
+  color: #29e0ff;
+  margin: 0 0 0.4rem;
+}
+
+.resultado-item p {
+  margin: 0;
+}
+
+.intro-ejercicio {
+  background-color: rgba(6, 10, 24, 0.6); /* más sutil que .instrucciones, para diferenciarla visualmente */
+  border-left: 3px solid #29e0ff;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.35rem;
+}
+
+.intro-ejercicio p {
+  margin: 0;
+}
+
+/* ---------- Pie de página ---------- */
+.sitio-footer {
+  width: 100%;
+  border-top: 1px solid rgba(120, 200, 255, 0.3);
+  background-color: rgba(6, 10, 24, 0.92);
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pie-flex {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #a9bcd8;
+}
+
+.pie-flex a {
+  color: #a9bcd8;
+}
+
+/* ---------- Video ---------- */
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* mantiene proporción 16:9 sin importar el ancho */
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 40rem) {
+  .cabecera-flex {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .menu-principal ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
 }
