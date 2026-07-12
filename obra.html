@@ -2,88 +2,139 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Casey Reas - Obras</title> 
+  <title>Casey Reas | Trayectoria y obra</title>
+  <meta name="description" content="Trayectoria de Casey Reas, su enfoque sobre el código como sistema visual y una galería de sus obras.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-<div class="contenedor">
 
-    <header>
-      <h1>Casey Reas</h1>
-      <p>Código, sistemas y arte generativo contemporáneo</p>
-    </header>
+  <header class="sitio-header">
+    <div class="contenedor cabecera-flex">
+      <p class="marca">CASEY REAS</p>
+      <nav class="menu-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="obra.html" class="activo">Trayectoria y obra</a></li>
+          <li><a href="produccion.html">Producción de instalaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="obra.html">Obra</a></li>
-        <li><a href="ejercicio.html">Ejercicio</a></li>
-      </ul>
-    </nav>
+  <main class="contenedor">
 
-    <main>
-      <div class="columnas-2">
+    <h1>Trayectoria y obra</h1>
+    <p class="subtitulo">Del sistema de reglas a la imagen: recorrido de un artista-programador</p>
 
-    <aside class="col-angosta">
-      <figure>
-        <img src="img/reas.jpg" alt="Casey Reas trabajando en su estudio">
-        <figcaption>Casey Reas en su estudio</figcaption>
-      </figure>
+    <!-- Layout de 2 columnas de ancho diferente -->
+    <div class="grid-2-columnas">
 
-      <h2>Obras y conceptos clave</h2>
-      <ul>
-        <li>Software Structures</li>
-        <li>Process</li>
-        <li>Generative Systems</li>
-        <li>Emergencia</li>
-        <li>Arte basado en reglas</li>
-        <li>Visualización algorítmica</li>
-      </ul>
-    </aside>
+      <article class="columna-principal">
 
-    <section class="col-ancha">
+        <section>
+          <h2>Trayectoria y contribuciones</h2>
+          <p>Nacido en Estados Unidos, Casey Reas desarrolló su formación en diseño y medios digitales, consolidando una carrera que combina investigación, producción artística y docencia. Es ampliamente conocido por ser co-creador del lenguaje de programación Processing, junto a Ben Fry, una herramienta fundamental para artistas y diseñadores que trabajan con código.</p>
+          <p>A lo largo de su trayectoria, su obra ha sido exhibida en museos, galerías y festivales internacionales. Sus proyectos exploran tanto sistemas digitales como su materialización en formatos físicos, ampliando las posibilidades del arte generativo.</p>
+          <p>Su influencia se extiende también al ámbito educativo, donde ha contribuido a formar nuevas generaciones de artistas y desarrolladores, estableciendo un puente entre el arte, el diseño y la programación.</p>
+        </section>
 
-      <article>
-        <h2>Sistemas, reglas y variación</h2>
-        <p>El trabajo de Casey Reas se fundamenta en la idea de que una obra puede ser entendida como un <strong>sistema de reglas</strong>. Estas reglas definen las posibles interacciones entre los elementos visuales, permitiendo que la obra se genere a partir de su ejecución.</p>
-        <p>Este enfoque introduce la variación como un elemento central. Cada vez que el sistema se ejecuta, puede producir un resultado diferente, lo que transforma la noción de originalidad y repetición en el arte digital.</p>
+        <section>
+          <h2>El código como sistema visual</h2>
+          <p>El enfoque de Casey Reas se basa en la creación de instrucciones que definen comportamientos visuales. En lugar de diseñar una imagen de forma directa, desarrolla algoritmos que determinan cómo los elementos se relacionan, se mueven y evolucionan en el tiempo.</p>
+          <p>A partir de reglas simples, sus sistemas pueden generar resultados complejos e impredecibles. Esta lógica permite explorar la <em>emergencia</em>, donde patrones y formas surgen de la interacción entre componentes.</p>
+                <div class="foto-inline">
+          <img src="img/reas-7.jpg" alt="Path, obra de Casey Reas que ejemplifica la emergencia de patrones a partir de reglas simples">
+           <p class="pie-foto">Path (Software 1), 2001, obra de Casey Reas que ejemplifica la emergencia de patrones a partir de reglas simples</p>
+        </div>
+        </section>
+
+
+
+        <section>
+          <h2>Sistemas, reglas y variación</h2>
+          <p>Su trabajo se fundamenta en la idea de que una obra puede ser entendida como un sistema de reglas. Estas reglas definen las posibles interacciones entre los elementos visuales, permitiendo que la obra se genere a partir de su ejecución.</p>
+          <p>Este enfoque introduce la variación como un elemento central: cada vez que el sistema se ejecuta, puede producir un resultado diferente, transformando la noción de originalidad y repetición en el arte digital.</p>
+          <div class="foto-inline">
+            <img src="img/reas-4.jpg" alt="Untitled Film Still 5.8, obra de la serie Compressed Cinema que ejemplifica la variación generada por un mismo sistema">
+           <p class="pie-foto">Untitled Film Still 5.8, 2019, obra de la serie Compressed Cinema que ejemplifica la variación generada por un mismo sistema</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>El rol del artista-programador</h2>
+          <p>En la práctica de Reas, el artista asume el rol de programador. En lugar de intervenir directamente sobre la imagen final, diseña el conjunto de instrucciones que dará lugar a múltiples resultados posibles.</p>
+          <p>Este cambio de rol implica una forma distinta de pensar el proceso creativo: la autoría se desplaza hacia el diseño del sistema, mientras que la ejecución introduce elementos de autonomía y sorpresa en la obra.</p>
+          <div class="foto-inline">
+            <img src="img/reas-5.jpg" alt="AAI (Anarchic Artificial Intelligence), obra que representa la autonomía del sistema frente al control directo del artista">
+            <p class="pie-foto">AAI (Anarchic Artificial Intelligence), 2017, obra que representa la autonomía del sistema frente al control directo del artista</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Influencia en el arte contemporáneo</h2>
+          <p>La obra de Casey Reas ha tenido un impacto significativo en el desarrollo del arte digital y generativo. Su enfoque ha contribuido a legitimar el uso del código como un medio artístico en el contexto contemporáneo.</p>
+          <p>Su influencia puede observarse en numerosos artistas y proyectos que adoptan el pensamiento basado en sistemas y algoritmos, ampliando la comprensión de las posibilidades del arte en relación con la tecnología.</p>
+           <div class="foto-inline">
+            <img src="img/reas-6.jpg" alt="There's No Distance in Poems in Code, obra reciente de Casey Reas que muestra la vigencia de su trabajo en el arte contemporáneo">
+            <p class="pie-foto">Vista de la instalación de <strong>"There’s no distance in poems in code"</strong> en el festival internacional Yebisu de Arte y visiones alternativas. Tokio, Japón, 2024.</p>
+          </div>
+        </section>
+
       </article>
 
-      <article>
-        <h2>El rol del artista-programador</h2>
-        <p>En la práctica de Reas, el artista asume el rol de programador. En lugar de intervenir directamente sobre la imagen final, diseña el conjunto de instrucciones que dará lugar a <strong>múltiples resultados posibles</strong>.</p>
-        <p>Este cambio de rol implica una forma distinta de pensar el proceso creativo. La autoría se desplaza hacia el diseño del sistema, mientras que la ejecución introduce elementos de autonomía y sorpresa en la obra.</p>
-      </article>
+      <aside class="columna-lateral">
 
-      <article>
-        <h2>Influencia en el arte contemporáneo</h2>
-        <p>La obra de Casey Reas ha tenido un <strong>impacto significativo</strong> en el desarrollo del arte digital y generativo. Su enfoque ha contribuido a legitimar el uso del código como un medio artístico en el contexto contemporáneo.</p>
-        <p>Su influencia puede observarse en numerosos artistas y proyectos que adoptan el pensamiento basado en sistemas y algoritmos.</p>
-      </article>
+        <div class="panel-lateral">
+          <h2>Obras y conceptos clave</h2>
+          <ul class="lista-obras">
+            <li>Software Structures</li>
+            <li>Process</li>
+            <li>Generative Systems</li>
+            <li>Emergencia</li>
+            <li>Arte basado en reglas</li>
+            <li>Visualización algorítmica</li>
+          </ul>
+        </div>
 
+      <div class="panel-lateral">
+        <h2>Video relacionado</h2>
+        <p>Casey Reas habla sobre su proceso creativo y su forma de pensar el código como medio artístico.</p>
+        <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/lu51j9V-ti0"
+        title="Casey Reas habla sobre arte generativo"
+        allowfullscreen>
+      </iframe>
+      </div>
+      </div>
+
+      </aside>
+
+    </div>
+
+    <!-- Funcionalidad JS: galería de obras (galeria.js) -->
+    <section>
+      <h2>Galería de obras</h2>
+      <p>Galería generada dinámicamente con JavaScript. Usá los botones para cambiar el tamaño de las imágenes o alternar la paleta de colores.</p>
+
+      <div class="controles-galeria">
+        <button id="btn-tamano" type="button">Cambiar tamaño</button>
+        <button id="btn-paleta" type="button">Cambiar paleta</button>
+      </div>
+
+      <div id="galeria" class="galeria" aria-live="polite"></div>
     </section>
 
-  </div>
+  </main>
 
-  <!-- Acá va a ir la galería generada con JS, la sumamos en el próximo paso -->
-  <section id="galeria">
-    <h2>Galería de obras</h2>
-    <p>Hacé clic en el botón para cambiar el diseño de la galería.</p>
-    <button id="btn-cambiar-diseno">Cambiar diseño</button>
-    <div id="contenedor-galeria" class="galeria-obras">
-      <!-- Las obras se van a insertar acá dinámicamente con JavaScript -->
+  <footer class="sitio-footer">
+    <div class="contenedor pie-flex">
+      <p>Contacto: <a href="mailto:casey@artedigital.com">casey@artedigital.com</a></p>
     </div>
-  </section>
-    </main>
+  </footer>
 
-<footer>
-  <p>&copy; 2026 - Segundo Parcial - Informática General - UNA</p>
-  <p>Contacto: <a href="mailto:casey@artedigital.com">casey@artedigital.com</a></p>
-</footer>
-</div>
-<script src="js/galeria.js" defer></script>
+  <script src="js/galeria.js"></script>
 </body>
 </html>
