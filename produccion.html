@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Casey Reas | Producción de instalaciones</title>
+  <meta name="description" content="Herramienta para simular la gestión de costos de producción de instalaciones interactivas del estudio de Casey Reas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="sitio-header">
+    <div class="contenedor cabecera-flex">
+      <p class="marca">CASEY REAS</p>
+      <nav class="menu-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="obra.html">Trayectoria y obra</a></li>
+          <li><a href="produccion.html" class="activo">Producción de instalaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <h1>Producción de instalaciones</h1>
+    <p class="subtitulo">Gestión de costos de producción del estudio de Casey Reas</p>
+
+    <!-- Texto de contexto -->
+   <section class="intro-ejercicio">
+    <p>El estudio de Casey Reas trabaja simultáneamente en varias instalaciones interactivas, cada una con su propio equipo, tiempo y presupuesto. Esta herramienta permite simular la gestión de esos costos de producción.</p>
+   </section>
+
+    <section class="instrucciones">
+      <h2>Cómo interactuar</h2>
+      <p>Completá los datos en orden: primero la cantidad de instalaciones, luego los datos de cada una, después las condiciones generales de trabajo del equipo, y por último presioná "Calcular" para ver los resultados. Podés reiniciar el ejercicio en cualquier momento una vez finalizado.</p>
+    </section>
+
+    <!-- Paso 1: cantidad de instalaciones a producir -->
+    <section class="paso-ejercicio" id="paso-cantidad">
+      <h2><span class="numero-paso">1</span> Cantidad de instalaciones</h2>
+      <form id="form-cantidad">
+        <div class="campo-formulario">
+          <label for="input-cantidad">¿Cuántas instalaciones se van a producir?</label>
+          <input type="number" id="input-cantidad" min="1" step="1" required>
+        </div>
+        <p class="mensaje-error" id="error-cantidad"></p>
+        <button type="submit" id="btn-confirmar-cantidad">Confirmar cantidad</button>
+      </form>
+    </section>
+
+    <!-- Paso 2: carga de cada instalación -->
+    <section class="paso-ejercicio oculto" id="paso-instalaciones">
+      <h2><span class="numero-paso">2</span> Datos de cada instalación</h2>
+      <form id="form-instalacion">
+        <div class="campo-formulario">
+          <label for="input-nombre">Nombre de la instalación</label>
+          <input type="text" id="input-nombre" required>
+        </div>
+        <div class="campo-formulario">
+          <label for="input-personas">Cantidad de personas necesarias</label>
+          <input type="number" id="input-personas" min="1" step="1" required>
+        </div>
+        <div class="campo-formulario">
+          <label for="input-dias">Días estimados de producción</label>
+          <input type="number" id="input-dias" min="1" step="1" required>
+        </div>
+        <p class="mensaje-error" id="error-instalacion"></p>
+        <button type="submit" id="btn-agregar-instalacion">Agregar instalación</button>
+      </form>
+      <p class="contador-carga" id="contador-instalaciones"></p>
+      <ul class="lista-instalaciones" id="lista-instalaciones"></ul>
+    </section>
+
+    <!-- Paso 3: datos generales del estudio -->
+    <section class="paso-ejercicio oculto" id="paso-general">
+      <h2><span class="numero-paso">3</span> Datos generales del estudio</h2>
+      <form id="form-general">
+        <div class="campo-formulario">
+          <label for="input-horas">Horas por día que trabaja el equipo</label>
+          <input type="number" id="input-horas" min="1" step="1" required>
+        </div>
+        <div class="campo-formulario">
+          <label for="input-valor-hora">Valor del honorario por hora ($)</label>
+          <input type="number" id="input-valor-hora" min="1" step="0.01" required>
+        </div>
+        <p class="mensaje-error" id="error-general"></p>
+        <button type="submit" id="btn-confirmar-general">Confirmar datos generales</button>
+      </form>
+    </section>
+
+    <!-- Paso 4: cálculo de resultados -->
+    <section class="paso-ejercicio oculto" id="paso-resultados">
+      <h2><span class="numero-paso">4</span> Resultados</h2>
+      <button type="button" id="btn-calcular" disabled>Calcular resultados</button>
+      <div class="panel-resultados" id="panel-resultados"></div>
+      <button type="button" id="btn-reiniciar" disabled>Reiniciar ejercicio</button>
+    </section>
+
+  </main>
+
+  <footer class="sitio-footer">
+    <div class="contenedor pie-flex">
+      <p>Contacto: <a href="mailto:casey@artedigital.com">casey@artedigital.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/ejercicio.js"></script>
+</body>
+</html>
