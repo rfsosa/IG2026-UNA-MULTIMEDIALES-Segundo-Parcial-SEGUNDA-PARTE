@@ -2,76 +2,79 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Casey Reas - Inicio</title>
+  <title>Casey Reas | Inicio</title>
+  <meta name="description" content="Sitio dedicado a la obra de Casey Reas: código, sistemas y arte generativo contemporáneo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <div class="contenedor">
-  
-    <header>
+
+  <header class="sitio-header">
+    <div class="contenedor cabecera-flex">
+      <p class="marca">CASEY REAS</p>
+      <nav class="menu-principal" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="obra.html">Trayectoria y obra</a></li>
+          <li><a href="produccion.html">Producción de instalaciones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- Intro: presentación general del artista -->
+    <section class="intro">
       <h1>Casey Reas</h1>
-      <p>Código, sistemas y arte generativo contemporáneo</p>
-    </header>
+      <p class="subtitulo">Código, sistemas y arte generativo contemporáneo</p>
+      <blockquote class="cita-destacada">
+        “Una obra puede ser definida como un sistema y ejecutada en múltiples formas.”
+        <cite>— Casey Reas</cite>
+      </blockquote>
+    </section>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="obra.html">Obra</a></li>
-        <li><a href="ejercicio.html">Ejercicio</a></li>
-      </ul>
-    </nav>
+    <!-- Layout de 3 columnas de igual ancho, requisito de la página de inicio -->
+    <section class="grid-3-columnas">
 
-    <div class="contenedor">
-    <header>...</header>
-    <nav>...</nav>
-    <main>
-      <!-- acá va el contenido específico de cada página -->
-    </main>
-    <footer>...</footer>
-  </div>
+      <article class="columna">
+        <div class="foto-inline">
+          <img src="img/reas.jpg" alt="Casey Reas trabajando frente a una laptop con proyecciones de código">
+          <p class="pie-foto">Casey Reas, artista, programador y educador</p>
+        </div>
+      </article>
 
-    <main>
-     <!-- Cita destacada del artista -->
-  <blockquote>
-    <p>Una obra puede ser definida como un sistema y ejecutada en múltiples formas.</p>
-    &mdash; Casey Reas
-  </blockquote>
+      <article class="columna">
+        <h2>Arte generativo y pensamiento computacional</h2>
+        <p>Casey Reas es un artista, programador y educador reconocido por su trabajo en el desarrollo del arte generativo. Su práctica se basa en la creación de sistemas que, a partir de reglas definidas, producen imágenes y comportamientos visuales autónomos.</p>
+        <p>Este enfoque desplaza la idea tradicional de obra terminada hacia <strong>procesos abiertos y en constante evolución</strong>. Su trabajo se centra en la relación entre instrucciones, ejecución y resultado.</p>
+      </article>
 
-  <!-- Layout de 3 columnas iguales -->
-  <div class="columnas">
+      <article class="columna">
+        <h2>El código como medio expresivo</h2>
+        <p>A través del uso del código, construye estructuras que permiten explorar variaciones infinitas dentro de un mismo sistema. De este modo, cada ejecución puede dar lugar a una experiencia visual distinta.</p>
+        <p>Su enfoque promueve la comprensión del código como un medio expresivo, accesible y profundamente creativo. Para conocer su trayectoria y sus obras, seguí explorando el sitio.</p>
+        <a class="enlace-boton" href="obra.html">Ver trayectoria y obra →</a>
+      </article>
 
-    <article class="columna">
-      <h2>Arte generativo y pensamiento computacional</h2>
-      <p>Casey Reas es un <strong>artista, programador y educador</strong> reconocido por su trabajo en el desarrollo del arte generativo. Su práctica se basa en la creación de sistemas que, a partir de reglas definidas, producen imágenes y comportamientos visuales autónomos.</p>
-      <p>Su trabajo se centra en la relación entre instrucciones, ejecución y resultado. A través del uso del código, construye estructuras que permiten explorar variaciones infinitas dentro de un mismo sistema.</p>
-      <p>Su enfoque promueve la comprensión del código como un medio expresivo, accesible y profundamente creativo.</p>
-    </article>
+    </section>
 
-    <article class="columna">
-      <h2>Trayectoria y contribuciones</h2>
-      <p>Nacido en Estados Unidos, Casey Reas desarrolló su formación en diseño y medios digitales, consolidando una carrera que combina investigación, producción artística y docencia.</p>
-      <p>Es ampliamente conocido por ser <strong>co-creador del lenguaje de programación Processing</strong>, junto a Ben Fry, una herramienta fundamental para artistas y diseñadores que trabajan con código.</p>
-      <p>Su influencia se extiende también al ámbito educativo, donde ha contribuido a formar nuevas generaciones de artistas y desarrolladores.</p>
-    </article>
+    <!-- Funcionalidad JS: dato curioso al azar (curiosidades.js) -->
+    <section class="panel-lateral panel-interactivo">
+      <h2>¿Sabías que...?</h2>
+      <p id="dato-curioso-texto">Presioná el botón para descubrir un dato curioso sobre Casey Reas.</p>
+      <button id="btn-dato-curioso" type="button">Mostrar otro dato curioso</button>
+    </section>
 
-    <article class="columna">
-      <h2>El código como sistema visual</h2>
-      <p>En lugar de diseñar una imagen de forma directa, Reas desarrolla algoritmos que determinan cómo los elementos se relacionan, se mueven y evolucionan en el tiempo.</p>
-      <p>A partir de reglas simples, sus sistemas pueden generar resultados <strong>complejos e impredecibles</strong>, explorando la emergencia de patrones a partir de la interacción entre componentes.</p>
-    </article>
+  </main>
 
-  </div>
-
-    </main>
-
-    <footer>
-      <p>&copy; 2026 - Segundo Parcial - Informática General - UNA</p>
+  <footer class="sitio-footer">
+    <div class="contenedor pie-flex">
       <p>Contacto: <a href="mailto:casey@artedigital.com">casey@artedigital.com</a></p>
-    </footer>
+    </div>
+  </footer>
 
-  </div>
+  <script src="js/curiosidades.js"></script>
 </body>
 </html>
